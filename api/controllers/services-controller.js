@@ -1,20 +1,20 @@
-const db = require('../models/Index');
+const db = require('../models/Index.js');
 
-const getAllServices = (req, res) => {
+const getAllServices = (req, res, next) => {
   db.services.findAll({})
   .then((dataFromDb) => {
     res.status(200).send(dataFromDb.map((item) => {
       return {
         id: item.id,
         name: item.name,
-        manager: item.manager,
-      };
-    }));
-  });
-};
+        manager: item.manager
+      }
+    }))
+  })
+}
 
-const getServiceById = (req, res) => {
-  db.services.findOnde({
+const getServiceById = (req, res, next) => {
+  db.services.findOne({
     where: {
       id: req.params.idservice
     },
