@@ -24,8 +24,29 @@ const getServiceById = (req, res, next) => {
   });
 };
 
+const addClient = async (req, res, next) => {
+
+  try {
+    const client = req.body
+    const serviceid = req.params
+
+    const model = {
+      service_id: serviceid,
+      name: client.name,
+      email: client.email,
+      value: client.data_nascimento
+    }
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({ message: 'Internal server error!!' })
+  }
+  
+}
+
 
 module.exports = {
   getAllServices,
-  getServiceById
+  getServiceById,
+  addClient
 };
