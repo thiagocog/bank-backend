@@ -22,6 +22,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       service_id: {
+        allowNull: false,
         references: {
           model: 'services', 
           key:'id'
