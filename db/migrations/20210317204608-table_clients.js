@@ -21,6 +21,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
+      value: {
+        allowNull: false,
+        type: Sequelize.FLOAT
+      },
       service_id: {
         allowNull: false,
         references: {

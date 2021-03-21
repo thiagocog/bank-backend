@@ -28,5 +28,16 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false
     }
   )
+
+  services.associate = function(models) {
+
+    services.hasMany(models.clients, {
+      foreignKey: 'service_id',
+      as: 'clients'
+    })
+
+  }
+
+
   return services
 }
