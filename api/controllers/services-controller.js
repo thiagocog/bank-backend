@@ -47,14 +47,14 @@ const getServiceById = async (req, res) => {
 const addClient = async (req, res) => {
 
   try {
-    const client = req.body
+    const body = req.body
     const { idservice } = req.params
 
     const model = {
       service_id: idservice,
-      client_name: client.name,
-      client_email: client.email,
-      client_address: client.address,
+      client_name: body.client_name,
+      client_email: body.client_email,
+      client_address: body.client_address,
       value: client.value
     }
 
@@ -69,12 +69,15 @@ const addClient = async (req, res) => {
   
 }
 
+
+
+
 const deleteClient = async (req, res) => {
 
   try {
     const { idclient } = req.params
 
-    await clients.detroy({
+    await clients.destroy({
       where: {
         id: idclient
       }
@@ -88,6 +91,8 @@ const deleteClient = async (req, res) => {
   }
 
 }
+
+
 
 
 module.exports = {
