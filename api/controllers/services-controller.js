@@ -19,7 +19,6 @@ const getServiceById = async (req, res) => {
       where: {
         id: req.params.idservice
       },
-      // Linhas abaixo comentadas pela ausência de clientes
       include: {
         model: clients,
         as: 'clients'
@@ -55,7 +54,7 @@ const addClient = async (req, res) => {
       client_name: body.client_name,
       client_email: body.client_email,
       client_address: body.client_address,
-      value: client.value
+      value: body.value
     }
 
     await clients.create(model);
