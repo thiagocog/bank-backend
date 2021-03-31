@@ -51,9 +51,9 @@ const addClient = async (req, res) => {
 
     const model = {
       service_id: idservice,
-      client_name: body.client_name,
-      client_email: body.client_email,
-      client_address: body.client_address,
+      client_name: body.name,
+      client_email: body.email,
+      client_address: body.address,
       value: body.value
     }
 

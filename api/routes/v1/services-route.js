@@ -13,11 +13,11 @@ module.exports = (router) => {
     servicesController.getServiceById
   )
 
-  router.route('/services/:idservice/addclient').post(
+  router.route('/services/:idservice/client').post(
     servicesController.addClient
   )
 
-  router.route('/services/:idservice/addclient/:idclient').delete(
+  router.route('/services/:idservice/client/:idclient').delete(
     servicesController.deleteClient
   )
 }
